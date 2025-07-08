@@ -1,0 +1,25 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdf6e3;
+  text-align: center;
+  padding: 50px;
+}
+
+button {
+  background-color: #ff69b4;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+#story {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #444;
+}
