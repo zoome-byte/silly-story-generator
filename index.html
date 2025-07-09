@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Silly Story Generator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>Random Silly Story Generator</h1>
-    <p>Enter a name below and click the button to generate a story:</p>
-    
-    <!-- 🔹 Name Input Field -->
-    <label for="customname">Custom Name:</label>
-    <input type="text" id="customname" placeholder="e.g., Karthik">
 
-    <br><br>
+  <div class="container">
+    <h1>Silly Story Generator</h1>
 
-    <!-- 🔹 Generate Button -->
-    <button id="generate">Tell me a story!</button>
+    <input type="text" id="character" placeholder="Enter a character name">
+    <button onclick="generateStory()">Generate Story</button>
 
-    <!-- 🔹 Story Output -->
-    <p id="story"></p>
-  </main>
+    <p id="story">Your story will appear here</p>
+  </div>
 
-  <!-- 🔹 JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>
