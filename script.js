@@ -1,48 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Silly Story Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <h1>Random Silly Story Generator</h1>
-    <p>Enter a name below and click the button to generate a story:</p>
+function generateStory() {
+  var character = document.getElementById("character").value;
 
-    <!-- 🔹 Name Input Field -->
-    <label for="customname">Custom Name:</label>
-    <input type="text" id="customname" placeholder="e.g., Karthik">
+  if (character.trim() === "") {
+    document.getElementById("story").textContent = "Please enter a character name.";
+    return;
+  }
 
-    <br><br>
+  var actions = ["danced nicely", "sneezed fire", "ate bread", "sang a song", "built a rocket"];
+  var places = ["on the stage", "in a haunted house", "at school", "in a forest", "in a heavy park"];
+  var times = ["at midnight", "during breakfast", "while it was raining", "on a sunny Tuesday", "during the full moon"];
 
-    <!-- 🔹 Generate Button -->
-    <button id="generate">Tell me a story!</button>
+  var action = actions[Math.floor(Math.random() * actions.length)];
+  var places = places[Math.floor(Math.random() * places.length)];
+  var times = times[Math.floor(Math.random() * times.length)];
 
-    <!-- 🔹 Story Output -->
-    <p id="story"></p>
-  </main>
 
-  <!-- 🔹 JavaScript File -->
-  <script>
-    const customName = document.getElementById('customname');
-    const generateBtn = document.getElementById('generate');
-    const story = document.getElementById('story');
-
-    const storyTemplate = "One day, :name: ate a pizza in the jungle. It was wild! 😂";
-
-    generateBtn.addEventListener('click', () => {
-      let newStory = storyTemplate;
-      const name = customName.value.trim();
-
-      if (name !== '') {
-        newStory = newStory.replace(':name:', name);
-      } else {
-        newStory = newStory.replace(':name:', 'Bob'); // Default fallback
-      }
-
-      story.textContent = newStory;
-    });
-  </script>
-</body>
-</html>
+  var story = character + " " + action + " " + places + " " + times + ".";
+  document.getElementById("story").textContent = story;
+}
